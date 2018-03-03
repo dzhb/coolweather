@@ -68,6 +68,14 @@ public class WeatherActivity extends AppCompatActivity {
 
     private TextView sportText;
 
+    private TextView dressText;
+
+    private TextView travelText;
+
+    private TextView fluText;
+
+    private TextView uvText;
+
     private ImageView bingPicImg;
 
     @Override
@@ -92,6 +100,10 @@ public class WeatherActivity extends AppCompatActivity {
         comfortText = (TextView) findViewById(R.id.comfort_text);
         carWashText = (TextView) findViewById(R.id.car_wash_text);
         sportText = (TextView) findViewById(R.id.sport_text);
+        dressText = (TextView) findViewById(R.id.dress_text);
+        travelText = (TextView) findViewById(R.id.travel_text);
+        fluText = (TextView) findViewById(R.id.flu_text);
+        uvText = (TextView) findViewById(R.id.uv_text);
         swipeRefresh = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh);
         swipeRefresh.setColorSchemeResources(R.color.colorPrimary);
         drawerLayout = (DrawerLayout) findViewById(R.id.draw_layout);
@@ -232,10 +244,19 @@ public class WeatherActivity extends AppCompatActivity {
             String comfort = "舒适度：" + weather.suggestion.comfort.info;
             String carWash = "洗车指数：" + weather.suggestion.carWash.info;
             String sport = "运动指数：" + weather.suggestion.sport.info;
+            String dress = "穿着建议：" + weather.suggestion.dress.info;
+            String travel = "旅行指数：" + weather.suggestion.travel.info;
+            String flu = "感冒指数：" + weather.suggestion.flu.info;
+            String uv = "防晒建议：" + weather.suggestion.uv.info;
             comfortText.setText(comfort);
             carWashText.setText(carWash);
             sportText.setText(sport);
+            dressText.setText(dress);
+            travelText.setText(travel);
+            fluText.setText(flu);
+            uvText.setText(uv);
             weatherLayout.setVisibility(View.VISIBLE);
+
 
             Intent intent = new Intent(this, AutoUpdateService.class);
             startService(intent);

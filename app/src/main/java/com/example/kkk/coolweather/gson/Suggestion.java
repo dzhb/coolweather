@@ -16,6 +16,17 @@ public class Suggestion {
 
     public Sport sport;
 
+    @SerializedName("trav")
+    public Travel travel;
+
+    public Flu flu;
+
+    //z
+    @SerializedName("drsg")
+    public Dress dress;
+
+    public Uv uv;
+
     public class Comfort{
         @SerializedName("txt")
         public String info;
@@ -27,6 +38,26 @@ public class Suggestion {
     }
 
     public class Sport{
+        @SerializedName("txt")
+        public String info;
+    }
+
+    public class Dress{
+        @SerializedName("txt")
+        public String info;
+    }
+
+    public class Flu{
+        @SerializedName("txt")
+        public String info;
+    }
+
+    public class Travel{
+        @SerializedName("txt")
+        public String info;
+    }
+
+    public class Uv{
         @SerializedName("txt")
         public String info;
     }
